@@ -18,10 +18,11 @@ const constRoutes = [
   }
 ]
 
-const createRouter = () => new VueRouter({
-  scrollBehavior: () => ({x: 0, y: 0}),
-  routes: constRoutes
-})
+const createRouter = () =>
+  new VueRouter({
+    scrollBehavior: () => ({ x: 0, y: 0 }),
+    routes: constRoutes
+  })
 
 const router = createRouter()
 
