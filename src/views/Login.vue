@@ -34,11 +34,11 @@
               prefix-icon="el-icon-lock"
               placeholder="请输入密码"
               v-model="loginForm.password"
-              @keydown.enter.native="clickLogin"
+              @keydown.enter.native="clickLogin('loginFormRef')"
             />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="clickLogin">登录</el-button>
+            <el-button type="primary" @click="clickLogin('loginFormRef')">登录</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { async } from 'q'
 export default {
   data() {
     return {
@@ -71,8 +72,15 @@ export default {
     }
   },
   methods: {
-    clickLogin() {
-      console.log(this.loginForm)
+    clickLogin(refName) {
+      this.$refs[refName].validate(async valid => {
+        if(!valid) return
+        // 验证通过
+        const { data: res } = await this.$axios.post('/login', this.loginForm)
+        if (res.code !== 200) return this.$message.error(res.message)
+        this.$router.push('/')
+        this.$message.success('恭喜登录成功！')
+      })
     }
   }
 }
