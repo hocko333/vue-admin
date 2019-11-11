@@ -13,27 +13,32 @@
           </div>
         </div>
         <el-form
-          class="box_bot"
           :model="loginForm"
+          :rules="loginFormRules"
+          class="box_bot"
           ref="loginFormRef"
           label-width="80px"
         >
-          <el-form-item>
+          <el-form-item prop="username">
             <el-input
               class="login_input"
               prefix-icon="el-icon-user"
               placeholder="请输入账号"
+              v-model="loginForm.username"
             />
           </el-form-item>
-          <el-form-item>
+          <el-form-item prop="password">
             <el-input
+              type="password"
               class="login_input"
               prefix-icon="el-icon-lock"
               placeholder="请输入密码"
+              v-model="loginForm.password"
+              @keydown.enter.native="clickLogin"
             />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary">登录</el-button>
+            <el-button type="primary" @click="clickLogin">登录</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -45,7 +50,29 @@
 export default {
   data() {
     return {
-      loginForm: {}
+      loginForm: {
+        username: '',
+        password: ''
+      },
+      loginFormRules: {
+        username: [
+          { required: true, message: '请输入正确的账户名', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          {
+            min: 6,
+            max: 16,
+            message: '密码应在 6~16 个字符之间',
+            trigger: 'blur'
+          }
+        ]
+      }
+    }
+  },
+  methods: {
+    clickLogin() {
+      console.log(this.loginForm)
     }
   }
 }
