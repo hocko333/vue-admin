@@ -90,7 +90,7 @@ export default {
 .login {
   width: 100%;
   height: 100%;
-  background: url('../assets/bgimg/loginBg.jpg') no-repeat center center;
+  background: url('../assets/bgimg/bg0.jpg') no-repeat center center;
   background-size: 100% 100%;
   overflow: hidden;
   position: relative;
