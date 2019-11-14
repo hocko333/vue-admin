@@ -48,6 +48,8 @@
 
 <script>
 import { async } from 'q'
+import {setToken} from '@/utils/token'
+
 export default {
   data() {
     return {
@@ -78,6 +80,8 @@ export default {
         // 验证通过
         const { data: res } = await this.$axios.post('/login', this.loginForm)
         if (res.code !== 200) return this.$message.error(res.message)
+        // 登录成功
+        setToken(res.data.token)
         this.$router.push('/')
         this.$message.success('恭喜登录成功！')
       })
