@@ -2,5 +2,6 @@
 // 'https://easy-mock.bookset.io/mock/5dca452cbd94c34583b56a89/vue-admin' 这个是别人搭建的分流
 module.exports = {
   baseUrlOfMock:
-    'https://easy-mock.bookset.io/mock/5dca452cbd94c34583b56a89/vue-admin'
+    'https://easy-mock.bookset.io/mock/5dca452cbd94c34583b56a89/vue-admin',
+  title: 'Vue Admin'
 }
