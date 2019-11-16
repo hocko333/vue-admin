@@ -1,17 +1,25 @@
 <template>
   <el-container>
-    <el-aside width="200px">Aside</el-aside>
+    <Aside />
     <el-container>
-      <el-header>Header</el-header>
+      <Header />
       <el-main>
-        <router-view></router-view>
+        <AppMain />
       </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
-export default {}
+import { AppMain, Aside, Header } from './components'
+
+export default {
+  components: {
+    AppMain,
+    Aside,
+    Header
+  }
+}
 </script>
 
 <style lang="less" scoped>

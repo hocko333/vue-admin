@@ -14,7 +14,7 @@ const constRoutes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/dashboard'),
+        component: () => import('@/views/Dashboard'),
         meta: { title: '首页' }
       }
     ]
