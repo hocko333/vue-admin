@@ -2,7 +2,7 @@
   <el-container>
     <Aside />
     <el-container>
-      <Header />
+      <el-header>Header</el-header>
       <el-main>
         <AppMain />
       </el-main>
@@ -11,13 +11,12 @@
 </template>
 
 <script>
-import { AppMain, Aside, Header } from './components'
+import { AppMain, Aside } from './components'
 
 export default {
   components: {
     AppMain,
-    Aside,
-    Header
+    Aside
   }
 }
 </script>
