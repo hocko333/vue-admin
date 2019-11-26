@@ -38,7 +38,7 @@
             />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="clickLogin('loginFormRef')">登录</el-button>
+            <el-button type="primary" @click="clickLogin('loginFormRef')" :disabled="disabledLogin">登录</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -48,7 +48,8 @@
 
 <script>
 import { async } from 'q'
-import {setToken} from '@/utils/token'
+import { setToken } from '@/utils/token'
+import { login } from '../api/user'
 
 export default {
   data() {
@@ -70,7 +71,8 @@ export default {
             trigger: 'blur'
           }
         ]
-      }
+      },
+      disabledLogin: false
     }
   },
   methods: {
@@ -78,7 +80,9 @@ export default {
       this.$refs[refName].validate(async valid => {
         if(!valid) return
         // 验证通过
-        const { data: res } = await this.$axios.post('/login', this.loginForm)
+        this.disabledLogin = true
+        const { data: res } = await login(this.loginForm)
+        this.disabledLogin = false
         if (res.code !== 200) return this.$message.error(res.message)
         // 登录成功
         setToken(res.data.token)

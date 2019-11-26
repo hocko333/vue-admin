@@ -25,3 +25,5 @@ service.interceptors.response.use(
   // 对响应错误做点什么
   error => Promise.reject(error)
 )
+
+export default service
