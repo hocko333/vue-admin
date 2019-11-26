@@ -7,3 +7,10 @@ export function login (data) {
     data
   })
 }
+
+export function getMenuList () {
+  return request({
+    url: 'menu-list',
+    method: 'get'
+  })
+}

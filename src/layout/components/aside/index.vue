@@ -1,5 +1,5 @@
 <template>
-  <el-aside width="200px">
+  <el-aside width="210px">
     <div class="logo_box">
       <img src="../../../assets/img/logo.png">
       Vue-Admin
@@ -8,7 +8,23 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
+  data() {
+    return {
+      menuList: []
+    }
+  },
+  methods: {
+    ...mapActions(['user/getMenuList']),
+    async getMenu() {
+      const { data: res } = await this['user/getMenuList']()
+    }
+  },
+  created() {
+    this.getMenu()
+  }
 }
 </script>
 

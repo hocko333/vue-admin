@@ -1,5 +1,6 @@
 import axios from 'axios'
 import settings from '@/settings'
+import { getToken } from './token'
 
 const service = axios.create({
   baseURL: settings.baseUrlOfMock,
@@ -10,6 +11,9 @@ const service = axios.create({
 service.interceptors.request.use(
   // 在发送请求之前做些什么
   config => {
+    if (getToken()) {
+      config.headers['X-Token'] = getToken()
+    }
     return config
   },
   // 对请求错误做些什么
