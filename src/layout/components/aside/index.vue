@@ -9,6 +9,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import toTree from '@/utils/to-tree'
 
 export default {
   data() {
@@ -20,6 +21,17 @@ export default {
     ...mapActions(['user/getMenuList']),
     async getMenu() {
       const { data: res } = await this['user/getMenuList']()
+      const treeObj = toTree(res)
+      const treeList = this.treeObjToList(treeObj)
+      this.menuList = treeList
+      console.log(treeList)
+    },
+    treeObjToList(obj) {
+      let treeList = []
+      for (const key in obj) {
+        treeList.push(obj[key])
+      }
+      return treeList
     }
   },
   created() {
