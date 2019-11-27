@@ -14,7 +14,7 @@ const constRoutes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/Dashboard'),
+        component: () => import('@/views/Dashboard/index'),
         meta: { title: '首页' }
       }
     ]
@@ -23,6 +23,19 @@ const constRoutes = [
     path: '/login',
     component: () => import('@/views/Login'),
     meta: { title: '登录' }
+  },
+  {
+    path: '/document',
+    component: Layout,
+    redirect: '/document/index',
+    children: [
+      {
+        path: 'index',
+        name: 'Document',
+        component: () => import('@/views/document/index'),
+        meta: { title: '文档' }
+      }
+    ]
   }
 ]
 

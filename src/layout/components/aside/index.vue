@@ -1,17 +1,21 @@
 <template>
   <el-aside width="210px">
-    <div class="logo_box">
-      <img src="../../../assets/img/logo.png" />
-      Vue-Admin
-    </div>
+    <router-link to="/">
+      <div class="logo_box">
+        <img src="../../../assets/img/logo.png" />
+        Vue-Admin
+      </div>
+    </router-link>
     <el-menu
       router
       background-color="#304156"
       mode="vertical"
       text-color="#bfcbd9"
       active-text-color="#409EFF"
+      :default-active="defaultActive"
+      :unique-opened="true"
     >
-      <el-menu-item :index="'dashboard'">
+      <el-menu-item :index="'/dashboard'">
         <i class="el-icon-menu"></i>
         首页
       </el-menu-item>
@@ -26,12 +30,23 @@ import toTree from '@/utils/to-tree'
 import SideBarItem from './SideBarItem'
 
 export default {
+  watch: {
+    // $route: {
+    //   handler(val) {
+    //     console.log(val)
+    //     this.defaultActive = val.path
+    //   },
+    //   deep: true,
+    //   immediate: true
+    // }
+  },
   components: {
     SideBarItem
   },
   data() {
     return {
-      menuList: []
+      menuList: [],
+      defaultActive: '/dashboard'
     }
   },
   methods: {
@@ -80,5 +95,9 @@ export default {
 
 .el-menu {
   border-right: 0 none;
+}
+
+.router-link-active {
+  text-decoration: none;
 }
 </style>
