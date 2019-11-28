@@ -9,7 +9,6 @@
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         router
-        background-color="#304156"
         mode="vertical"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
@@ -97,6 +96,7 @@ export default {
 
 .el-menu {
   border-right: 0 none;
+  background-color: #304156;
 }
 
 .router-link-active {
@@ -111,5 +111,26 @@ export default {
 <style lang="less">
 .scrollbar-wrapper {
   overflow-x: hidden !important;
+}
+
+.el-submenu {
+  .el-menu {
+    background-color: #1f2d3d !important;
+    // .el-menu-item {
+    //   background-color: #fff !important;
+    // }
+  }
+}
+
+.el-menu-item:hover {
+  background-color: #263445 !important;
+}
+
+.el-menu-item:focus {
+  background-color: transparent !important;
+}
+
+.el-submenu__title:hover {
+  background-color: #263445 !important;
 }
 </style>

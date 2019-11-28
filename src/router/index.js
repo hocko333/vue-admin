@@ -16,6 +16,12 @@ const constRoutes = [
         name: 'Dashboard',
         component: () => import('@/views/Dashboard/index'),
         meta: { title: '首页' }
+      },
+      {
+        path: 'page-permission',
+        name: 'PagePermission',
+        component: () => import('@/views/permission/page-permission'),
+        meta: { title: '页面权限' }
       }
     ]
   },
