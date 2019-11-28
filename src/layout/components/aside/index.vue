@@ -6,21 +6,23 @@
         Vue-Admin
       </div>
     </router-link>
-    <el-menu
-      router
-      background-color="#304156"
-      mode="vertical"
-      text-color="#bfcbd9"
-      active-text-color="#409EFF"
-      :default-active="defaultActive"
-      :unique-opened="true"
-    >
-      <el-menu-item :index="'/dashboard'">
-        <i class="el-icon-menu"></i>
-        首页
-      </el-menu-item>
-      <side-bar-item v-for="item in menuList" :key="item.path" :item="item" />
-    </el-menu>
+    <el-scrollbar wrap-class="scrollbar-wrapper">
+      <el-menu
+        router
+        background-color="#304156"
+        mode="vertical"
+        text-color="#bfcbd9"
+        active-text-color="#409EFF"
+        :default-active="defaultActive"
+        :unique-opened="true"
+      >
+        <el-menu-item :index="'/dashboard'">
+          <i class="el-icon-menu"></i>
+          首页
+        </el-menu-item>
+        <side-bar-item v-for="item in menuList" :key="item.path" :item="item" />
+      </el-menu>
+    </el-scrollbar>
   </el-aside>
 </template>
 
@@ -74,6 +76,7 @@ export default {
 <style lang="less" scoped>
 .el-aside {
   height: 100%;
+  overflow: hidden;
   background-color: #304156;
   .logo_box {
     display: flex;
@@ -98,5 +101,15 @@ export default {
 
 .router-link-active {
   text-decoration: none;
+}
+
+.el-scrollbar {
+  height: calc(100% - 50px);
+}
+</style>
+
+<style lang="less">
+.scrollbar-wrapper {
+  overflow-x: hidden !important;
 }
 </style>
