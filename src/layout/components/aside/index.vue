@@ -31,14 +31,13 @@ import SideBarItem from './SideBarItem'
 
 export default {
   watch: {
-    // $route: {
-    //   handler(val) {
-    //     console.log(val)
-    //     this.defaultActive = val.path
-    //   },
-    //   deep: true,
-    //   immediate: true
-    // }
+    $route: {
+      handler(val) {
+        this.defaultActive = val.path.replace('/index', '')
+      },
+      deep: true,
+      immediate: true
+    }
   },
   components: {
     SideBarItem
