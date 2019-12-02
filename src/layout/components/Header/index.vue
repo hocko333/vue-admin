@@ -3,8 +3,8 @@
     <div class="header_left center_class">
       <div class="collapse_btn item_class">
         <i class="el-icon-s-fold"></i>
+        <!-- <i class="el-icon-s-unfold"></i> -->
       </div>
-      <!-- <i class="el-icon-s-unfold"></i> -->
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>
@@ -51,6 +51,12 @@ export default {}
   .header_left {
     display: flex;
     justify-content: flex-start;
+    .collapse_btn {
+      margin-right: 8px;
+      i[class^='el-icon'] {
+        font-size: 22px;
+      }
+    }
   }
   .header_right {
     display: flex;
