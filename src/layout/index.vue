@@ -2,7 +2,7 @@
   <el-container>
     <Aside />
     <el-container>
-      <el-header>
+      <el-header height="60px">
         <Header />
       </el-header>
       <el-main>
@@ -27,5 +27,8 @@ export default {
 <style lang="less" scoped>
 .el-container {
   height: 100%;
+  .el-header {
+    padding: 0;
+  }
 }
 </style>
