@@ -1,9 +1,9 @@
 <template>
   <div class="header_container">
     <div class="header_left center_class">
-      <div class="collapse_btn item_class">
-        <i class="el-icon-s-fold"></i>
-        <!-- <i class="el-icon-s-unfold"></i> -->
+      <div class="collapse_btn item_class" @click="handleToggle">
+        <i class="el-icon-s-fold" v-if="!sideBar.isCollapse"></i>
+        <i class="el-icon-s-unfold" v-else></i>
       </div>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -37,7 +37,18 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters(['sideBar'])
+  },
+  methods: {
+    handleToggle() {
+      this.$store.dispatch('app/toggleSidebar')
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
