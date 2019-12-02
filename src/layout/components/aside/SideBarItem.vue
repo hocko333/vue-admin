@@ -1,6 +1,6 @@
 <template>
-  <!--  v-if="item.children" -->
-  <div>
+  <fragment>
+    <!--  v-if="item.children" -->
     <!--  v-if="item.children.length == 0" -->
     <template v-if="!item.children">
       <el-menu-item :index="item.path">
@@ -16,18 +16,14 @@
       </template>
 
       <template v-for="child in item.children">
-        <sidebar-item
-          v-if="child.children"
-          :item="child"
-          :key="child.path"
-        />
+        <sidebar-item v-if="child.children" :item="child" :key="child.path" />
         <el-menu-item v-else :key="child.path" :index="child.path">
           <i class="el-icon-location"></i>
           {{child.name}}
         </el-menu-item>
       </template>
     </el-submenu>
-  </div>
+  </fragment>
 </template>
 
 <script>

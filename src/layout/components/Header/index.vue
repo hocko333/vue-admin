@@ -64,6 +64,8 @@ export default {
     justify-content: flex-start;
     .collapse_btn {
       margin-right: 8px;
+      padding-left: 15px;
+      padding-right: 15px;
       i[class^='el-icon'] {
         font-size: 22px;
       }
@@ -83,8 +85,8 @@ export default {
 .item_class {
   height: 100%;
   cursor: pointer;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   align-items: center;
   i[class^='el-icon'] {

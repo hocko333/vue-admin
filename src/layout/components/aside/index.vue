@@ -1,5 +1,5 @@
 <template>
-  <el-aside width="210px">
+  <el-aside :width="sideBar.isCollapse ? '64px' : '210px'">
     <router-link to="/">
       <div class="logo_box">
         <img src="../../../assets/img/logo.png" />
@@ -14,6 +14,7 @@
         active-text-color="#409EFF"
         :default-active="defaultActive"
         :unique-opened="true"
+        :collapse="sideBar.isCollapse"
       >
         <el-menu-item :index="'/dashboard'">
           <i class="el-icon-menu"></i>
@@ -26,11 +27,14 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import toTree from '@/utils/to-tree'
 import SideBarItem from './SideBarItem'
 
 export default {
+  computed: {
+    ...mapGetters(['sideBar'])
+  },
   watch: {
     $route: {
       handler(val) {
@@ -96,7 +100,6 @@ export default {
 
 .el-menu {
   border-right: 0 none;
-  background-color: #304156;
 }
 
 .router-link-active {
@@ -111,6 +114,10 @@ export default {
 <style lang="less">
 .scrollbar-wrapper {
   overflow-x: hidden !important;
+}
+
+.el-menu {
+  background-color: #304156 !important;
 }
 
 .el-submenu {

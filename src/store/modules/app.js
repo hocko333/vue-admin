@@ -2,7 +2,7 @@ const isCollapseFromStorage = window.sessionStorage.getItem('isCollapse')
 
 const state = {
   sideBar: {
-    isCollapse: isCollapseFromStorage ? !!+isCollapseFromStorage : true
+    isCollapse: isCollapseFromStorage ? !!+isCollapseFromStorage : false
   }
 }
 
