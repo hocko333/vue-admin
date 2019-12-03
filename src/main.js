@@ -4,7 +4,6 @@ import router from '@/router'
 import store from '@/store'
 import ElementUI from 'element-ui'
 import axios from 'axios'
-import Fragment from 'vue-fragment'
 
 import settings from '@/settings'
 
@@ -13,7 +12,6 @@ import '@/assets/css/global.css'
 import '@/permission'
 
 Vue.use(ElementUI)
-Vue.use(Fragment.Plugin)
 
 axios.defaults.baseURL = settings.baseUrlOfMock
 Vue.prototype.$axios = axios

@@ -1,5 +1,5 @@
 <template>
-  <fragment>
+  <div>
     <!--  v-if="item.children" -->
     <!--  v-if="item.children.length == 0" -->
     <template v-if="!item.children">
@@ -23,7 +23,7 @@
         </el-menu-item>
       </template>
     </el-submenu>
-  </fragment>
+  </div>
 </template>
 
 <script>
