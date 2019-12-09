@@ -9,6 +9,7 @@
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         router
+        class="left_menu"
         mode="vertical"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
@@ -81,6 +82,7 @@ export default {
   height: 100%;
   overflow: hidden;
   background-color: #304156;
+  transition: width 0.3s;
   .logo_box {
     display: flex;
     align-items: center;
@@ -139,5 +141,9 @@ export default {
 
 .el-submenu__title:hover {
   background-color: #263445 !important;
+}
+
+.left_menu:not(.el-menu--collapse) {
+  width: 210px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <fragment>
     <template v-if="!item.children">
       <el-menu-item :index="item.path">
         <i class="el-icon-menu"></i>
@@ -13,7 +13,7 @@
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :item="child"></sidebar-item>
     </el-submenu>
-  </div>
+  </fragment>
 </template>
 
 <script>
