@@ -72,6 +72,7 @@ export default {
     }
   }
   .header_right {
+    padding-right: 15px;
     display: flex;
     justify-content: flex-end;
   }
@@ -97,5 +98,15 @@ export default {
 
 .item_class:not(.collapse_btn):hover {
   background-color: #f6f8f8;
+}
+
+.el-dropdown {
+  padding: 0;
+  .el-dropdown-link {
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
 }
 </style>
