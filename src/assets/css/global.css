@@ -18,6 +18,24 @@ body {
     box-sizing: border-box;
 }
 
+.item_class {
+  height: 100%;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.item_class:not(.collapse_btn):hover {
+  background-color: #f6f8f8;
+}
+
+.item_class i[class^='el-icon'] {
+  font-size: 18px;
+  color: #606266;
+}
+
 /* .el-submenu__title,
 .el-menu-item {
   color: #fff;
