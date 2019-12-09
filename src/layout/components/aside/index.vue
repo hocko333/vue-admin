@@ -18,7 +18,7 @@
       >
         <el-menu-item :index="'/dashboard'">
           <i class="el-icon-menu"></i>
-          首页
+          <span slot="title">首页</span>
         </el-menu-item>
         <side-bar-item v-for="item in menuList" :key="item.path" :item="item" />
       </el-menu>
