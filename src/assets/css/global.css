@@ -36,25 +36,7 @@ body {
   color: #606266;
 }
 
-/* .el-submenu__title,
-.el-menu-item {
-  color: #fff;
-  font-size: 13px;
+.el-drawer.rtl {
+  height: calc(100% - 61px)!important;
+  top: 61px;
 }
-
-i.iconfont {
-  margin-right: 10px;
-}
-
-.box-card {
-  margin-top: 15px;
-}
-
-.el-table {
-  margin-top: 15px;
-  font-size: 12px;
-}
-
-.el-pagination {
-  margin-top: 15px;
-} */
