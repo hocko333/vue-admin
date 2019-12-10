@@ -42,6 +42,19 @@ const constRoutes = [
         meta: { title: '文档' }
       }
     ]
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    children: [
+      {
+        path: 'index',
+        name: 'Profile',
+        component: () => import('@/views/profile/index'),
+        meta: { title: '个人中心' }
+      }
+    ]
   }
 ]
 

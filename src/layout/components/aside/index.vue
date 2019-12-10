@@ -104,10 +104,6 @@ export default {
   border-right: 0 none;
 }
 
-.router-link-active {
-  text-decoration: none;
-}
-
 .el-scrollbar {
   height: calc(100% - 50px);
 }

@@ -2,7 +2,7 @@
   <el-container>
     <Aside />
     <el-container>
-      <el-header height="60px">
+      <el-header height="50px">
         <Header />
       </el-header>
       <el-main>
