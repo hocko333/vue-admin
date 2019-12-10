@@ -2,7 +2,8 @@
   <div class="dropdown-menu-container">
     <el-dropdown class="item_class">
       <span class="el-dropdown-link">
-        下拉菜单
+        <span class="username">{{ 'admin' }}</span>
+        <img class="avatar" src="../../assets/img/logo.png"/>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -26,6 +27,12 @@ export default {}
     padding: 0 10px;
     display: flex;
     align-items: center;
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
   }
 }
 </style>
