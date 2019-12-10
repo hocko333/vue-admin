@@ -1,9 +1,11 @@
 <template>
   <el-aside :width="sideBar.isCollapse ? '64px' : '210px'">
     <router-link to="/">
-      <div class="logo_box">
+      <div :class="sideBar.isCollapse ? 'logo_collapse' : 'logo_box'">
         <img src="../../../assets/img/logo.png" />
-        Vue-Admin
+        <transition name="sidebarLogoFade">
+          <span v-show="!sideBar.isCollapse">Vue-Admin</span>
+        </transition>
       </div>
     </router-link>
     <el-scrollbar wrap-class="scrollbar-wrapper">
@@ -98,6 +100,17 @@ export default {
       margin-right: 16px;
     }
   }
+  .logo_collapse {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2f3a;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
 
 .el-menu {
@@ -106,6 +119,15 @@ export default {
 
 .el-scrollbar {
   height: calc(100% - 50px);
+}
+
+.sidebarLogoFade-enter-active {
+  transition: opacity 1.5s;
+}
+
+.sidebarLogoFade-enter,
+.sidebarLogoFade-leave-to {
+  opacity: 0;
 }
 </style>
 
@@ -121,9 +143,6 @@ export default {
 .el-submenu {
   .el-menu {
     background-color: #1f2d3d !important;
-    // .el-menu-item {
-    //   background-color: #fff !important;
-    // }
   }
 }
 
