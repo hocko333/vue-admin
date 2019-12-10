@@ -10,7 +10,14 @@ export function login (data) {
 
 export function getMenuList () {
   return request({
-    url: 'menu-list',
+    url: '/menu-list',
+    method: 'get'
+  })
+}
+
+export function logOut () {
+  return request({
+    url: '/logout',
     method: 'get'
   })
 }

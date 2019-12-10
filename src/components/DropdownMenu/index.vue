@@ -19,7 +19,7 @@
             个人中心
           </el-dropdown-item>
         </router-link>
-        <el-dropdown-item divided>
+        <el-dropdown-item divided @click.native="handleLogOut">
           <i class="el-icon-switch-button"></i>
           退出登录
         </el-dropdown-item>
@@ -29,7 +29,36 @@
 </template>
 
 <script>
-export default {}
+import { logOut } from '../../api/user'
+import { removeToken } from '../../utils/token'
+
+export default {
+  methods: {
+    handleLogOut() {
+      this.$confirm('您将要退出系统，跳转到登录页面，是否继续？', '退出登录', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        // 确定退出
+        this.logOutYes()
+      }).catch(() => {})
+    },
+    async logOutYes() {
+      const { data: res } = await logOut()
+      if (res.code-0 !== 200) return this.$message.error('退出失败，请刷新重试~')
+      // 退出成功 跳转到登录页
+      this.$message.success({
+        message: '已退出系统，将为您跳转到登录页面',
+        duration: 2000,
+        onClose: () => {
+          removeToken()
+          this.$router.push('/login')
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
