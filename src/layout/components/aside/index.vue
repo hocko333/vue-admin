@@ -142,27 +142,13 @@ export default {
   font-size: 16px !important;
 }
 
-// .el-menu {
-//   background-color: #304156 !important;
-// }
-
-// .el-submenu {
-//   .el-menu {
-//     background-color: #1f2d3d !important;
-//   }
-// }
-
-// .el-menu-item:hover {
-//   background-color: #263445 !important;
-// }
-
-// .el-menu-item:focus {
-//   background-color: transparent !important;
-// }
-
-// .el-submenu__title:hover {
-//   background-color: #263445 !important;
-// }
+.left_menu > .el-submenu.is-opened .el-menu {
+  background-color: #1f2d3d !important;
+  .el-menu-item,
+  .el-submenu .el-submenu__title {
+    background-color: #1f2d3d !important;
+  }
+}
 
 .left_menu:not(.el-menu--collapse) {
   width: 210px;
