@@ -1,5 +1,5 @@
 <template>
-  <el-aside :width="sideBar.isCollapse ? '64px' : '210px'">
+  <el-aside class="aside_container" :width="sideBar.isCollapse ? '64px' : '210px'">
     <router-link to="/">
       <div :class="sideBar.isCollapse ? 'logo_collapse' : 'logo_box'">
         <img src="../../../assets/img/logo.png" />

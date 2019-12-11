@@ -46,7 +46,7 @@ export default {
     },
     $_initSidebarResizeEvent() {
       this.$_sidebarElm = document.getElementsByClassName(
-        'sidebar-container'
+        'aside_container'
       )[0]
       this.$_sidebarElm &&
         this.$_sidebarElm.addEventListener(
