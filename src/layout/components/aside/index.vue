@@ -15,6 +15,7 @@
         mode="vertical"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
+        background-color="#304156"
         :default-active="defaultActive"
         :unique-opened="true"
         :collapse="sideBar.isCollapse"
@@ -85,6 +86,7 @@ export default {
   overflow: hidden;
   background-color: #304156;
   transition: width 0.3s;
+  user-select: none;
   .logo_box {
     display: flex;
     align-items: center;
@@ -136,27 +138,31 @@ export default {
   overflow-x: hidden !important;
 }
 
-.el-menu {
-  background-color: #304156 !important;
+.el-submenu__icon-arrow {
+  font-size: 16px !important;
 }
 
-.el-submenu {
-  .el-menu {
-    background-color: #1f2d3d !important;
-  }
-}
+// .el-menu {
+//   background-color: #304156 !important;
+// }
 
-.el-menu-item:hover {
-  background-color: #263445 !important;
-}
+// .el-submenu {
+//   .el-menu {
+//     background-color: #1f2d3d !important;
+//   }
+// }
 
-.el-menu-item:focus {
-  background-color: transparent !important;
-}
+// .el-menu-item:hover {
+//   background-color: #263445 !important;
+// }
 
-.el-submenu__title:hover {
-  background-color: #263445 !important;
-}
+// .el-menu-item:focus {
+//   background-color: transparent !important;
+// }
+
+// .el-submenu__title:hover {
+//   background-color: #263445 !important;
+// }
 
 .left_menu:not(.el-menu--collapse) {
   width: 210px;

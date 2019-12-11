@@ -38,6 +38,7 @@ export default {
   display: flex;
   justify-content: space-between;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  user-select: none;
   .header_left {
     display: flex;
     justify-content: flex-start;
