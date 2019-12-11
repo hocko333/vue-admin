@@ -7,8 +7,10 @@
 <script>
 import echarts from 'echarts'
 require('echarts/theme/macarons')
+import resize from '../../mixins/resize'
 
 export default {
+  mixins: [resize],
   data() {
     return {
       chart: null
@@ -64,10 +66,7 @@ export default {
           splitArea: {
             show: true,
             areaStyle: {
-              color: [
-                'rgba(100, 100, 100, 0.03)',
-                'rgba(100, 100, 100, 0)'
-              ]
+              color: ['rgba(100, 100, 100, 0.03)', 'rgba(100, 100, 100, 0)']
             }
           },
           splitLine: {
@@ -89,10 +88,6 @@ export default {
                   color: '#FF005A',
                   width: 2
                 }
-                // ,
-                // areaStyle: {
-                //   color: '#ccc'
-                // }
               }
             },
             data: expectedData,
