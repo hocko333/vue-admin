@@ -64,7 +64,6 @@ export default {
       const treeObj = toTree(res)
       const treeList = this.treeObjToList(treeObj)
       this.menuList = treeList
-      console.log(treeList)
     },
     treeObjToList(obj) {
       let treeList = []
