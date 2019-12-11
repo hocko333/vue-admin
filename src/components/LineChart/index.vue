@@ -60,6 +60,20 @@ export default {
             lineStyle: {
               color: '#2a88cd'
             }
+          },
+          splitArea: {
+            show: true,
+            areaStyle: {
+              color: [
+                'rgba(100, 100, 100, 0.03)',
+                'rgba(100, 100, 100, 0)'
+              ]
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: 'rgba(100, 100, 100, 0.05)'
+            }
           }
         },
         legend: {
