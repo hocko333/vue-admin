@@ -41,8 +41,12 @@ a {
 }
 
 .el-drawer.rtl {
-  height: calc(100% - 61px) !important;
-  top: 61px;
+  height: calc(100% - 51px) !important;
+  top: 51px;
+}
+
+.notice_drawer .el-drawer__body {
+  padding: 0 20px;
 }
 
 .dropdown-menu-container .dropdown_menu_list {
