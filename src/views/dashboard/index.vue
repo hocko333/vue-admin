@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dashboard-container">
     这里是首页看板 dashboard
   </div>
 </template>
