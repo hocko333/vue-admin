@@ -20,8 +20,8 @@ export default {
     initChart() {
       this.chart = echarts.init(this.$refs.chartRef)
       this.setOptions({
-        expectedData: [820, 932, 901, 934, 1290, 1330, 1320],
-        actualData: [720, 832, 701, 734, 990, 1030, 1120]
+        expectedData: [820, 932, 701, 934, 990, 1330, 1020],
+        actualData: [720, 832, 901, 734, 1290, 1030, 1320]
       })
     },
     setOptions({ expectedData, actualData } = {}) {
@@ -51,7 +51,8 @@ export default {
           axisPointer: {
             type: 'cross'
           },
-          padding: [5, 10]
+          padding: [5, 10],
+          backgroundColor: 'rgba(50,50,50,0.5)'
         },
         yAxis: {
           type: 'value',
