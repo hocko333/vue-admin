@@ -15,7 +15,9 @@
           </div>
           <div class="box_right">
             <p class="name">{{ item.name }}</p>
-            <p class="number">{{ item.total }}</p>
+            <p class="number">
+              <count-to :start-val="0" :end-val="item.total-0" :duration="2000" />
+            </p>
           </div>
         </div>
       </el-col>
@@ -26,8 +28,12 @@
 <script>
 import { getTabInfo } from '../../api/dashboard'
 import bus from '../../utils/bus'
+import countTo from 'vue-count-to'
 
 export default {
+  components: {
+    countTo
+  },
   watch: {
     panelName(val) {
       const curList = this.tabInfo.find(item => item.name === val).list
