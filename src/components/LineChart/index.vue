@@ -12,24 +12,33 @@ import bus from '../../utils/bus'
 
 export default {
   mixins: [resize],
+  watch: {
+    lineData: {
+      handler(val) {
+        this.setOptions(val)
+      },
+      deep: true
+    }
+  },
   data() {
     return {
-      chart: null
+      chart: null,
+      lineData: {
+        expectedData: [],
+        actualData: [],
+        time: []
+      }
     }
   },
   methods: {
     initChart() {
       this.chart = echarts.init(this.$refs.chartRef)
-      this.setOptions({
-        expectedData: [820, 932, 701, 934, 990, 1330, 1020],
-        actualData: [720, 832, 901, 734, 1290, 1030, 1320]
-      })
     },
-    setOptions({ expectedData, actualData } = {}) {
+    setOptions({ expectedData, actualData, time }) {
       this.chart.setOption({
         xAxis: {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: time,
           boundaryGap: false,
           axisTick: {
             show: false
@@ -123,7 +132,9 @@ export default {
     },
     setLineData() {
       bus.$on('getLineData', data => {
-        console.log(data)
+        this.lineData.expectedData = data.map(item => item.expected)
+        this.lineData.actualData = data.map(item => item.actual)
+        this.lineData.time = data.map(item => item.time)
       })
     }
   },
