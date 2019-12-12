@@ -8,6 +8,7 @@
 import echarts from 'echarts'
 require('echarts/theme/macarons')
 import resize from '../../mixins/resize'
+import bus from '../../utils/bus'
 
 export default {
   mixins: [resize],
@@ -119,7 +120,15 @@ export default {
           }
         ]
       })
+    },
+    setLineData() {
+      bus.$on('getLineData', data => {
+        console.log(data)
+      })
     }
+  },
+  created() {
+    this.setLineData()
   },
   mounted() {
     this.$nextTick(() => {

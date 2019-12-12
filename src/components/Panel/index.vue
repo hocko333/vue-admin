@@ -9,7 +9,7 @@
         v-for="(item, i) in tabInfo"
         :key="item.name"
       >
-        <div class="tab_box">
+        <div class="tab_box" @click="handleClickPanel(item.name)">
           <div class="box_left">
             <i :class="'el-icon-' + iconList[i]"></i>
           </div>
@@ -25,22 +25,33 @@
 
 <script>
 import { getTabInfo } from '../../api/dashboard'
+import bus from '../../utils/bus'
 
 export default {
+  watch: {
+    panelName(val) {
+      const curList = this.tabInfo.find(item => item.name === val).list
+      bus.$emit('getLineData', curList)
+    }
+  },
   data() {
     return {
       tabInfo: [],
-      iconList: ['s-promotion', 's-comment', 's-goods', 's-ticket']
+      iconList: ['s-promotion', 's-comment', 's-goods', 's-ticket'],
+      panelName: ''
     }
   },
   methods: {
     async queryTabInfo() {
       const { data: res } = await getTabInfo()
-      console.log(res)
       if (res.code !== 200)
         return this.$message.error('获取卡片数据失败，请刷新重试~')
       // 获取卡片数据成功
       this.tabInfo = res.data
+      this.panelName = this.tabInfo[0].name
+    },
+    handleClickPanel(pName) {
+      this.panelName = pName
     }
   },
   created() {
