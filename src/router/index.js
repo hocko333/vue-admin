@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/layout'
 
-
 Vue.use(VueRouter)
 
 const constRoutes = [
@@ -14,7 +13,7 @@ const constRoutes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/Dashboard/index'),
+        component: () => import('@/views/dashboard/index'),
         meta: { title: '首页' }
       },
       {
