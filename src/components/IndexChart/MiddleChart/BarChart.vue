@@ -6,12 +6,19 @@
 
 <script>
 import echarts from 'echarts'
+import resize from '../../../mixins/resize'
 
 export default {
+  mixins: [resize],
+  data() {
+    return {
+      chart: null
+    }
+  },
   methods: {
     initChart() {
-      const chart = echarts.init(this.$refs.chartRef)
-      chart.setOption({
+      this.chart = echarts.init(this.$refs.chartRef)
+      this.chart.setOption({
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']

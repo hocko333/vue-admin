@@ -6,23 +6,19 @@
 
 <script>
 import echarts from 'echarts'
+import resize from '../../../mixins/resize'
 
 export default {
+  mixins: [resize],
+  data() {
+    return {
+      chart: null
+    }
+  },
   methods: {
     initChart() {
-      const chart = echarts.init(this.$refs.chartRef)
-      chart.setOption({
-        backgroundColor: '#2c343c',
-
-        title: {
-          text: 'Customized Pie',
-          left: 'center',
-          top: 20,
-          textStyle: {
-            color: '#ccc'
-          }
-        },
-
+      this.chart = echarts.init(this.$refs.chartRef)
+      this.chart.setOption({
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -73,7 +69,7 @@ export default {
               normal: {
                 color: '#c23531',
                 shadowBlur: 200,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                shadowColor: 'rgba(0, 0, 0, 0)'
               }
             },
 

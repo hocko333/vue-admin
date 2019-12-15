@@ -1,13 +1,13 @@
 <template>
   <div class="middle-chart-container">
     <el-row :gutter="25">
-      <el-col :span="8">
+      <el-col :xs="24" :sm="24" :lg="8">
         <radar-chart />
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="24" :sm="24" :lg="8">
         <pie-chart />
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="24" :sm="24" :lg="8">
         <bar-chart />
       </el-col>
     </el-row>
@@ -39,5 +39,7 @@ export default {
   background-color: #fff;
   overflow: hidden;
   border-radius: 4px;
+  padding: 16px 16px 0;
+  margin-bottom: 30px;
 }
 </style>
