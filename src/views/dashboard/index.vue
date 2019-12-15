@@ -7,7 +7,7 @@
 
 <script>
 import Panel from '../../components/Panel'
-import LineChart from '../../components/LineChart'
+import LineChart from '../../components/IndexChart'
 
 export default {
   components: {
