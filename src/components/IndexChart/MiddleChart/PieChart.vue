@@ -6,6 +6,7 @@
 
 <script>
 import echarts from 'echarts'
+require('echarts/theme/macarons')
 import resize from '../../../mixins/resize'
 
 export default {
@@ -17,62 +18,31 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$refs.chartRef)
+      this.chart = echarts.init(this.$refs.chartRef, 'macarons')
       this.chart.setOption({
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)'
         },
-
-        visualMap: {
-          show: false,
-          min: 80,
-          max: 600,
-          inRange: {
-            colorLightness: [0, 1]
-          }
+        legend: {
+          left: 'center',
+          bottom: '10',
+          data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
         },
         series: [
           {
             name: '访问来源',
             type: 'pie',
-            radius: '55%',
-            center: ['50%', '50%'],
+            radius: [10, 95],
+            center: ['50%', '38%'],
             data: [
               { value: 335, name: '直接访问' },
-              { value: 310, name: '邮件营销' },
-              { value: 274, name: '联盟广告' },
-              { value: 235, name: '视频广告' },
-              { value: 400, name: '搜索引擎' }
-            ].sort(function(a, b) {
-              return a.value - b.value
-            }),
+              { value: 210, name: '邮件营销' },
+              { value: 154, name: '联盟广告' },
+              { value: 105, name: '视频广告' },
+              { value: 70, name: '搜索引擎' }
+            ].sort((a, b) => b.value - a.value),
             roseType: 'radius',
-            label: {
-              normal: {
-                textStyle: {
-                  color: 'rgba(255, 255, 255, 0.3)'
-                }
-              }
-            },
-            labelLine: {
-              normal: {
-                lineStyle: {
-                  color: 'rgba(255, 255, 255, 0.3)'
-                },
-                smooth: 0.2,
-                length: 10,
-                length2: 20
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: '#c23531',
-                shadowBlur: 200,
-                shadowColor: 'rgba(0, 0, 0, 0)'
-              }
-            },
-
             animationType: 'scale',
             animationEasing: 'elasticOut',
             animationDelay: function(idx) {

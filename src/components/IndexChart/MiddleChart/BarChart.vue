@@ -6,6 +6,7 @@
 
 <script>
 import echarts from 'echarts'
+require('echarts/theme/macarons')
 import resize from '../../../mixins/resize'
 
 export default {
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$refs.chartRef)
+      this.chart = echarts.init(this.$refs.chartRef, 'macarons')
       this.chart.setOption({
         xAxis: {
           type: 'category',
