@@ -21,7 +21,7 @@
         :collapse="sideBar.isCollapse"
       >
         <el-menu-item :index="'/dashboard'">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-s-home"></i>
           <span slot="title">首页</span>
         </el-menu-item>
         <side-bar-item v-for="item in menuList" :key="item.path" :item="item" />

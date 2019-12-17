@@ -2,13 +2,13 @@
   <fragment>
     <template v-if="!item.children">
       <el-menu-item :index="item.path">
-        <i class="el-icon-menu"></i>
+        <i :class="'el-icon-' + iconMap[item.name]"></i>
         <span slot="title">{{ item.name }}</span>
       </el-menu-item>
     </template>
     <el-submenu v-else :index="item.path">
       <template slot="title">
-        <i class="el-icon-menu"></i>
+        <i :class="'el-icon-' + iconMap[item.name]"></i>
         <span slot="title">{{ item.name }}</span>
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :item="child"></sidebar-item>
@@ -27,7 +27,12 @@ export default {
   },
   data() {
     return {
-      childItem: null
+      childItem: null,
+      iconMap: {
+        '文档': 's-management',
+        '权限': 's-cooperation',
+        '测试': 's-order'
+      }
     }
   },
   methods: {}
