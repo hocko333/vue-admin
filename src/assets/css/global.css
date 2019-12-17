@@ -12,6 +12,10 @@ body {
     Microsoft YaHei, SimSun, sans-serif;
 }
 
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
