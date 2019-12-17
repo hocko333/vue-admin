@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="todo-container footer_child">
+    <div class="title">TODO List</div>
+  </div>
 </template>
 
 <script>

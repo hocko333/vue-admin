@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="card-container footer_child">Card</div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-  <div class="table-container">
+  <div class="table-container footer_child">
     <el-table :data="tableList" stripe style="width: 100%">
-      <el-table-column prop="id" label="订单ID" min-width="30%"></el-table-column>
+      <el-table-column show-overflow-tooltip prop="id" label="订单ID" min-width="30%"></el-table-column>
       <el-table-column prop="name" label="名称" min-width="26%"></el-table-column>
       <el-table-column prop="price" label="价格" min-width="18%">
         <template slot-scope="{row}">

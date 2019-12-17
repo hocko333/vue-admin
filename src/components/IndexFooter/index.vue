@@ -4,10 +4,10 @@
       <el-col :xs="24" :sm="24" :lg="11">
         <index-table />
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="7">
+      <el-col :xs="24" :sm="12" :lg="7">
         <todo />
       </el-col>
-      <el-col :xs="24" :sm="24" :lg="6">
+      <el-col :xs="24" :sm="12" :lg="6">
         <card />
       </el-col>
     </el-row>
@@ -28,5 +28,10 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.footer_child {
+  height: 390px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
 </style>
