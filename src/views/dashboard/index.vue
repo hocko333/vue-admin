@@ -3,6 +3,7 @@
     <panel />
     <line-chart />
     <middle-chart />
+    <index-footer />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import Panel from '../../components/Panel'
 import LineChart from '../../components/IndexChart'
 import MiddleChart from '../../components/IndexChart/MiddleChart'
+import IndexFooter from '../../components/IndexFooter'
 
 export default {
   components: {
     Panel,
     LineChart,
-    MiddleChart
+    MiddleChart,
+    IndexFooter
   }
 }
 </script>

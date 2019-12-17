@@ -6,3 +6,10 @@ export function getTabInfo() {
     method: 'get'
   })
 }
+
+export function getTableList() {
+  return request({
+    url: '/index-table-list',
+    method: 'get'
+  })
+}
