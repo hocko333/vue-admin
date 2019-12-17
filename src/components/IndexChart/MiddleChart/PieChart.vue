@@ -45,9 +45,8 @@ export default {
             roseType: 'radius',
             animationType: 'scale',
             animationEasing: 'elasticOut',
-            animationDelay: function(idx) {
-              return Math.random() * 200
-            }
+            animationDuration: 2600,
+            animationDelay: idx => Math.random() * 200
           }
         ]
       })

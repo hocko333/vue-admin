@@ -106,6 +106,10 @@ export default {
   }
 }
 
+.panel_row {
+  min-height: 138px;
+}
+
 .panel_col {
   margin-bottom: 30px;
 }

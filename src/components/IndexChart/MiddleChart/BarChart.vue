@@ -55,7 +55,8 @@ export default {
                 position: 'insideRight'
               }
             },
-            data: [320, 302, 301, 334, 390, 330, 320]
+            data: [320, 302, 301, 334, 390, 330, 320],
+            animationDuration: 2600
           },
           {
             name: '邮件营销',
@@ -68,7 +69,8 @@ export default {
                 position: 'insideRight'
               }
             },
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: [120, 132, 101, 134, 90, 230, 210],
+            animationDuration: 2600
           },
           {
             name: '联盟广告',
@@ -81,7 +83,8 @@ export default {
                 position: 'insideRight'
               }
             },
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: [220, 182, 191, 234, 290, 330, 310],
+            animationDuration: 2600
           }
         ]
       })

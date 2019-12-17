@@ -68,6 +68,7 @@ export default {
                 opacity: 0.7
               }
             },
+            animationDuration: 2600,
             data: [
               {
                 value: [7300, 15000, 15800, 9500, 9000, 16900],
