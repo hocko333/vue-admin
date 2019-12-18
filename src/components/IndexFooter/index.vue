@@ -30,7 +30,7 @@ export default {
 
 <style lang="less">
 .footer_child {
-  height: 390px;
+  min-height: 390px;
   background-color: #fff;
   margin-bottom: 30px;
 }
