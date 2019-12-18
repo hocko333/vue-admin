@@ -188,10 +188,11 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid #d9d9d9;
   margin-left: 12px;
   margin-right: 18px;
   cursor: pointer;
+  transition: border-color .9s;
   i {
     font-size: 27px;
     font-weight: 600;
@@ -239,6 +240,10 @@ export default {
   display: block;
 }
 
+.item:hover > .radio {
+  border-color: #bbb;
+}
+
 .complete {
   .radio {
     i {
@@ -277,5 +282,11 @@ export default {
       border-color: green;
     }
   }
+}
+
+.no_todo {
+  font-size: 28px;
+  color: #ccc;
+  padding: 10px;
 }
 </style>
