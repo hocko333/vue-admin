@@ -99,6 +99,7 @@ export default {}
   }
   .bg_img:hover img {
     transform: scale(1.14);
+    filter: contrast(120%);
   }
 }
 </style>
