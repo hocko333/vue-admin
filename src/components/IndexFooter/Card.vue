@@ -5,8 +5,9 @@
       <div class="bot_header">
         <div class="header_avatar_wraper">
           <img :src="require('../../assets/img/avatar.jpg')" />
+          <span>程 宽</span>
         </div>
-        <p class="header_text">Vue Admin</p>
+        <p class="header_text" title="点击复制邮箱地址">chengkuan689@163.com</p>
       </div>
       <div class="bot_main">
         <div class="item">
@@ -50,26 +51,37 @@ export default {}
     justify-content: space-around;
     height: 40px;
     .header_avatar_wraper {
+      width: 70px;
+      height: 70px;
+      // padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
-      background-color: #fff;
+      background-color: #409eff;
       border-radius: 50%;
       cursor: pointer;
       transform: translateY(-30%);
+      position: relative;
       img {
         width: 54px;
         height: 54px;
         border-radius: 50%;
         transform-origin: 95% 40%;
         transition: transform .3s;
+        position: absolute;
+        z-index: 2;
+      }
+      span {
+        position: absolute;
+        z-index: 1;
+        color: #fff;
       }
     }
     .header_text {
       font-size: 20px;
       font-weight: 600;
-      color: aqua;
+      color: #4dd9d5;
+      cursor: pointer;
     }
   }
   .bot_main {
@@ -88,7 +100,7 @@ export default {}
 }
 
 .header_avatar_wraper:hover img {
-  transform: rotateZ(-110deg);
+  transform: rotateZ(-120deg);
 }
 </style>
 
