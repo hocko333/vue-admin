@@ -5,6 +5,7 @@ import store from '@/store'
 import ElementUI from 'element-ui'
 import axios from 'axios'
 import Fragment from 'vue-fragment'
+import VueClipboard from 'vue-clipboard2'
 
 import settings from '@/settings'
 
@@ -14,6 +15,7 @@ import '@/permission'
 
 Vue.use(ElementUI)
 Vue.use(Fragment.Plugin)
+Vue.use(VueClipboard)
 
 axios.defaults.baseURL = settings.baseUrlOfMock
 Vue.prototype.$axios = axios

@@ -7,7 +7,13 @@
           <img :src="require('../../assets/img/avatar.jpg')" />
           <span>程 宽</span>
         </div>
-        <p class="header_text" title="点击复制邮箱地址">chengkuan689@163.com</p>
+        <p
+          class="header_text"
+          title="点击复制邮箱地址"
+          v-clipboard:copy="email"
+          v-clipboard:success="onCopySuccess"
+          v-clipboard:error="onCopyError"
+        >{{ email }}</p>
       </div>
       <div class="bot_main">
         <div class="item">
@@ -28,7 +34,29 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      email: 'chengkuan689@163.com'
+    }
+  },
+  methods: {
+    onCopySuccess() {
+      this.$message.success({
+        message: '复制成功！',
+        duration: 1000,
+        center: true
+      })
+    },
+    onCopyError() {
+      this.$message.error({
+        message: '复制失败！',
+        duration: 1000,
+        center: true
+      })
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -67,7 +95,7 @@ export default {}
         height: 54px;
         border-radius: 50%;
         transform-origin: 95% 40%;
-        transition: transform .3s;
+        transition: transform 0.3s;
         position: absolute;
         z-index: 2;
       }
@@ -107,7 +135,7 @@ export default {}
 <style lang="less">
 .card-container {
   .bg_img img {
-    transition: all .3s;
+    transition: all 0.3s;
   }
   .bg_img:hover img {
     transform: scale(1.14);
