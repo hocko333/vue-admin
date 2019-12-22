@@ -19,6 +19,12 @@
             个人中心
           </el-dropdown-item>
         </router-link>
+        <a href="https://github.com/hocko333/vue-admin" target="_blank" rel="noopener noreferrer">
+          <el-dropdown-item>
+            <i class="el-icon-s-flag"></i>
+            项目地址
+          </el-dropdown-item>
+        </a>
         <el-dropdown-item divided @click.native="handleLogOut">
           <i class="el-icon-switch-button"></i>
           退出登录
@@ -39,14 +45,17 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
-      }).then(() => {
-        // 确定退出
-        this.logOutYes()
-      }).catch(() => {})
+      })
+        .then(() => {
+          // 确定退出
+          this.logOutYes()
+        })
+        .catch(() => {})
     },
     async logOutYes() {
       const { data: res } = await logOut()
-      if (res.code-0 !== 200) return this.$message.error('退出失败，请刷新重试~')
+      if (res.code - 0 !== 200)
+        return this.$message.error('退出失败，请刷新重试~')
       // 退出成功 跳转到登录页
       this.$message.success({
         message: '已退出系统，将为您跳转到登录页面',
