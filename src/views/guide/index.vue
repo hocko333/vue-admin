@@ -1,6 +1,6 @@
 <template>
   <div>
-    这里是文档 document
+    这里是引导页 guide
   </div>
 </template>
 

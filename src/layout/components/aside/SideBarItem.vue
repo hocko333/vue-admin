@@ -29,7 +29,7 @@ export default {
     return {
       childItem: null,
       iconMap: {
-        '文档': 's-management',
+        '引导页': 's-management',
         '权限': 's-cooperation',
         '测试': 's-order'
       }

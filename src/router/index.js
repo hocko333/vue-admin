@@ -37,8 +37,8 @@ const constRoutes = [
       {
         path: 'index',
         name: 'Document',
-        component: () => import('@/views/document/index'),
-        meta: { title: '文档' }
+        component: () => import('@/views/guide/index'),
+        meta: { title: '引导页' }
       }
     ]
   },
