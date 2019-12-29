@@ -1,5 +1,5 @@
 <template>
-  <div class="notice-container">
+  <div class="notice-container" id="notice-container">
     <div class="message item_class" @click="handleClickNotice">
       <el-badge is-dot>
         <i class="el-icon-message-solid"></i>

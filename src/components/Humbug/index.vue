@@ -1,5 +1,5 @@
 <template>
-  <div class="humbug-container">
+  <div class="humbug-container" id="humbug-container">
     <div class="collapse_btn item_class" @click="handleToggle">
       <i class="el-icon-s-fold" v-if="!sideBar.isCollapse"></i>
       <i class="el-icon-s-unfold" v-else></i>

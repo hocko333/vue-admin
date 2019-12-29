@@ -12,6 +12,7 @@
       <el-menu
         router
         class="left_menu"
+        id="left-menu"
         mode="vertical"
         text-color="#bfcbd9"
         active-text-color="#409EFF"

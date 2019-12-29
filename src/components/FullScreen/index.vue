@@ -1,5 +1,5 @@
 <template>
-  <div class="full-screen-container">
+  <div class="full-screen-container" id="full-screen-container">
     <div class="full_screen item_class" @click="handleClick">
       <i :class="isFullScreen ? 'el-icon-aim' : 'el-icon-full-screen'"></i>
     </div>
