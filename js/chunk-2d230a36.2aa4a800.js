@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d230a36"],{ecac:function(e,n,c){"use strict";c.r(n);var a=function(){var e=this,n=e.$createElement,c=e._self._c||n;return c("div",[e._v(" 这里是个人中心 ")])},t=[],u={},r=u,s=c("2877"),i=Object(s["a"])(r,a,t,!1,null,"eeafc81a",null);n["default"]=i.exports}}]);
+//# sourceMappingURL=chunk-2d230a36.2aa4a800.js.map
