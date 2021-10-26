@@ -1,6 +1,7 @@
 {
   "name": "vue-admin",
   "version": "0.1.0",
+  "homepage": "https://hocko333.github.io/vue-admin",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve --open",
